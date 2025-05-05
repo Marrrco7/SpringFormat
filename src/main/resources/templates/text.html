@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><title>Java Formatter</title></head>
+<head>
+    <title>Java Code Formatter</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
 <body>
 <h2>Java Formatter</h2>
 <form method="post" action="/format">
-    <textarea name="code" rows="15" cols="80" placeholder="Paste your Java code here..."></textarea><br>
-    Text ID: <input type="text" name="textId"><br>
-    Duration (seconds): <input type="number" name="durationInSeconds" min="10"><br>
-    <button type="submit">Format</button>
+    <textarea name="code" rows="15" placeholder="Paste your Java code here..." required></textarea>
+    <label>Text ID:</label>
+    <input type="text" name="textId" required>
+    <label>Duration (seconds):</label>
+    <input type="number" name="durationInSeconds" min="10" max="7776000" required>
+    <button type="submit">Format Code</button>
 </form>
 </body>
 </html>

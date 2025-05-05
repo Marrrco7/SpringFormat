@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head><title>Error</title></head>
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
 <body>
-<h2>Error Occurred</h2>
-<p th:text="${error}">Something went wrong.</p>
-<a href="/">Back</a>
+<h2 style="color: red;">Error Occurred</h2>
+<p th:text="${error}">Something went wrong while formatting the code.</p>
+<a href="/">&#8592; Back to Form</a>
 </body>
 </html>

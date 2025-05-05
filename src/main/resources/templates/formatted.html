@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head><title>Formatted Code</title></head>
+<head>
+    <title>Formatted Java Code</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
 <body>
-<h2>Code Formatting Result</h2>
-<div style="display: flex; gap: 20px;">
-    <div style="width: 50%; border: 1px dashed black;">
-        <pre><code th:text="${originalCode}">Original code</code></pre>
+<h2>Formatting Result</h2>
+<div class="code-container">
+    <div class="code-box">
+        <strong>Original Code:</strong>
+        <pre><code th:text="${originalCode}">Original code here</code></pre>
     </div>
-    <div style="width: 50%; border: 1px dashed black;">
-        <pre><code th:text="${formattedCode}">Formatted code</code></pre>
+    <div class="code-box">
+        <strong>Formatted Code:</strong>
+        <pre><code th:text="${formattedCode}">Formatted code here</code></pre>
     </div>
 </div>
+<br>
+<a href="/">&#8592; Back to Form</a>
 </body>
 </html>
