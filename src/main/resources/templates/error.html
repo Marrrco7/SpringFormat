@@ -2,23 +2,18 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{fragments}">
+      layout:decorate="~{layout}">
 <head>
-    <title layout:fragment="head">Error</title>
+    <title layout:fragment="myHead">Error</title>
 </head>
+
 <body>
-<div layout:fragment="navbar"></div>
-
-<main layout:fragment="content" class="container mt-5">
-    <div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">Error Occurred</h4>
-        <p th:text="${error}">An unexpected error happened.</p>
+<main layout:fragment="content" class="container py-5">
+    <div class="alert alert-danger">
+        <h4 class="alert-heading">Formatting Failed</h4>
+        <p th:text="${error}">An unexpected error occurred.</p>
     </div>
-    <a th:href="@{/}" class="btn btn-secondary">
-        &#8592; Back to Form
-    </a>
+    <a th:href="@{/}" class="btn btn-secondary">← Back to Form</a>
 </main>
-
-<div layout:fragment="footer"></div>
 </body>
 </html>

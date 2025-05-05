@@ -2,53 +2,34 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{fragments}">
+      layout:decorate="~{layout}">
 <head>
-    <!-- Set the page title -->
-    <title layout:fragment="head">Java Formatter</title>
+    <title>Java Formatter</title>
 </head>
 <body>
-<!-- navbar -->
-<div layout:fragment="navbar"></div>
+<main layout:fragment="content">
+    <div class="container text-center text-white" style="max-width: 800px; margin-top: 100px;">
+        <h1 class="mb-4">Java Formatter</h1>
+        <form th:action="@{/format}" method="post" class="text-start bg-white bg-opacity-75 p-4 rounded shadow">
+            <div class="mb-3">
+                <label for="code" class="form-label fw-bold">Source Code</label>
+                <textarea id="code" name="code" class="form-control" rows="10" placeholder="Paste your java code here"></textarea>
 
-<!-- main content -->
-<main layout:fragment="content" class="container mt-5">
-    <h2 class="mb-4">Java Formatter</h2>
-    <form th:action="@{/format}" method="post" class="row g-3">
-        <div class="col-12">
-        <textarea class="form-control"
-                  name="code"
-                  rows="12"
-                  placeholder="Paste your Java code here..."
-                  required></textarea>
-        </div>
-        <div class="col-md-6">
-            <label for="textId" class="form-label">Text ID</label>
-            <input type="text"
-                   class="form-control"
-                   id="textId"
-                   name="textId"
-                   required/>
-        </div>
-        <div class="col-md-6">
-            <label for="durationInSeconds" class="form-label">
-                Duration (seconds)
-            </label>
-            <input type="number"
-                   class="form-control"
-                   id="durationInSeconds"
-                   name="durationInSeconds"
-                   min="10"
-                   max="7776000"
-                   required/>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Format Code</button>
-        </div>
-    </form>
+            </div>
+            <div class="mb-3">
+                <label for="textId" class="form-label fw-bold">Text ID</label>
+                <input id="textId" name="textId" type="text" class="form-control" placeholder="Enter and ID for the code"/>
+            </div>
+            <div class="mb-3">
+                <label for="durationInSeconds" class="form-label fw-bold">Duration (seconds)</label>
+                <input id="durationInSeconds" name="durationInSeconds" type="number"
+                       class="form-control" min="10" max="7776000" placeholder="Duration to store the code in seconds:"/>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Format Code</button>
+            </div>
+        </form>
+    </div>
 </main>
-
-<!-- footer -->
-<div layout:fragment="footer"></div>
 </body>
 </html>

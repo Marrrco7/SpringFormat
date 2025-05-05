@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{fragments}">
-<head>
-    <title layout:fragment="head">Formatting Result</title>
-</head>
-<body>
-<div layout:fragment="navbar"></div>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<main layout:fragment="content" class="container mt-5">
-    <h2 class="mb-4">Formatting Result</h2>
-    <div class="row gx-4 gy-4">
+<head th:replace="~{fragments :: head(title='Formatting Result')}"></head>
+
+<body>
+
+<main class="container py-5">
+    <h1 class="mb-4">Formatting Result</h1>
+    <div class="row g-4">
         <div class="col-md-6">
-            <div class="card h-100">
+            <div class="card code-card h-100 shadow-sm">
                 <div class="card-header">Original Code</div>
                 <div class="card-body">
-            <pre class="card-text"><code
-                    th:text="${originalCode}"></code></pre>
+                    <pre class="mb-0"><code th:text="${originalCode}"></code></pre>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card h-100 border-success">
-                <div class="card-header bg-success text-white">
-                    Formatted Code
-                </div>
+            <div class="card code-card formatted h-100 shadow-sm">
+                <div class="card-header bg-success text-white">Formatted Code</div>
                 <div class="card-body">
-            <pre class="card-text"><code
-                    th:text="${formattedCode}"></code></pre>
+                    <pre class="mb-0"><code th:text="${formattedCode}"></code></pre>
                 </div>
             </div>
         </div>
     </div>
-    <a th:href="@{/}" class="btn btn-secondary mt-4">
-        &#8592; Back to Form
-    </a>
+    <div class="mt-4 text-end">
+        <a th:href="@{/}" class="btn btn-secondary">← Back to Form</a>
+    </div>
 </main>
 
-<div layout:fragment="footer"></div>
 </body>
 </html>
+

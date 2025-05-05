@@ -1,8 +1,24 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f9fb;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    color: white;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    pointer-events: none;
+    z-index: -1;
 }
 
 h2 {
@@ -56,4 +72,26 @@ button:hover {
     white-space: pre-wrap;
     font-family: monospace;
     font-size: 14px;
+}
+
+.code-card {
+    background: #272822;
+    color: #f8f8f2;
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+.code-card .card-header {
+    background: #1e1e1e;
+    font-weight: bold;
+}
+
+.code-card pre {
+    margin: 0;
+    font-family: Menlo, monospace;
+    font-size: 0.875rem;
+}
+
+.formatted {
+    border: 2px solid #66d9ef;
 }

@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(title)">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title th:text="${title}">CodeFormatter</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-          th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}"/>
-    <!-- Your custom CSS -->
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <title th:text="${title}">Default Title</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/stylesheets/style.css}"/>
 </head>
+
 <body>
-<!-- Navbar Fragment -->
-<nav th:fragment="navbar">
+<nav th:fragment="myHeader(header)">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/}">CodeFormatter</a>
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navMenu"
-                    aria-controls="navMenu" aria-expanded="false"
-                    aria-label="Toggle navigation">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">[[${header}]]</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/}">Home</a>
                     </li>
@@ -35,14 +28,10 @@
     </nav>
 </nav>
 
-<!-- Footer Fragment -->
-<footer th:fragment="footer">
-    <div class="text-center py-3">
-        <small class="text-muted">&copy; 2025 Your Name</small>
+<footer th:fragment="myFooter" class="bg-light py-3 mt-auto">
+    <div class="container text-center">
+        <small class="text-muted">&copy; TPO 08</small>
     </div>
 </footer>
-
-<!-- Bootstrap JS Bundle (includes Popper) -->
-<script th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
