@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Formatted Code</title></head>
+<body>
+<h2>Code Formatting Result</h2>
+<div style="display: flex; gap: 20px;">
+    <div style="width: 50%; border: 1px dashed black;">
+        <pre><code th:text="${originalCode}">Original code</code></pre>
+    </div>
+    <div style="width: 50%; border: 1px dashed black;">
+        <pre><code th:text="${formattedCode}">Formatted code</code></pre>
+    </div>
+</div>
+</body>
+</html>
