@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments}">
 <head>
-    <title>Error</title>
-    <link rel="stylesheet" href="/style.css">
+    <title layout:fragment="head">Error</title>
 </head>
 <body>
-<h2 style="color: red;">Error Occurred</h2>
-<p th:text="${error}">Something went wrong while formatting the code.</p>
-<a href="/">&#8592; Back to Form</a>
+<div layout:fragment="navbar"></div>
+
+<main layout:fragment="content" class="container mt-5">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Error Occurred</h4>
+        <p th:text="${error}">An unexpected error happened.</p>
+    </div>
+    <a th:href="@{/}" class="btn btn-secondary">
+        &#8592; Back to Form
+    </a>
+</main>
+
+<div layout:fragment="footer"></div>
 </body>
 </html>

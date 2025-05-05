@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: codeFormater
+server:
+  servlet:
+    context-path: /codeFormater
+    session:
+      cookie:
+        max-age: 86400
+      timeout: 1440

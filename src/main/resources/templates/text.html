@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments}">
 <head>
-    <title>Java Code Formatter</title>
-    <link rel="stylesheet" href="/style.css">
+    <!-- Set the page title -->
+    <title layout:fragment="head">Java Formatter</title>
 </head>
 <body>
-<h2>Java Formatter</h2>
-<form method="post" action="/format">
-    <textarea name="code" rows="15" placeholder="Paste your Java code here..." required></textarea>
-    <label>Text ID:</label>
-    <input type="text" name="textId" required>
-    <label>Duration (seconds):</label>
-    <input type="number" name="durationInSeconds" min="10" max="7776000" required>
-    <button type="submit">Format Code</button>
-</form>
+<!-- navbar -->
+<div layout:fragment="navbar"></div>
+
+<!-- main content -->
+<main layout:fragment="content" class="container mt-5">
+    <h2 class="mb-4">Java Formatter</h2>
+    <form th:action="@{/format}" method="post" class="row g-3">
+        <div class="col-12">
+        <textarea class="form-control"
+                  name="code"
+                  rows="12"
+                  placeholder="Paste your Java code here..."
+                  required></textarea>
+        </div>
+        <div class="col-md-6">
+            <label for="textId" class="form-label">Text ID</label>
+            <input type="text"
+                   class="form-control"
+                   id="textId"
+                   name="textId"
+                   required/>
+        </div>
+        <div class="col-md-6">
+            <label for="durationInSeconds" class="form-label">
+                Duration (seconds)
+            </label>
+            <input type="number"
+                   class="form-control"
+                   id="durationInSeconds"
+                   name="durationInSeconds"
+                   min="10"
+                   max="7776000"
+                   required/>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Format Code</button>
+        </div>
+    </form>
+</main>
+
+<!-- footer -->
+<div layout:fragment="footer"></div>
 </body>
 </html>
